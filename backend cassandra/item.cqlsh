@@ -1,0 +1,13 @@
+-- Create Keyspace
+CREATE KEYSPACE crud_sample 
+WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
+
+-- Use Keyspace
+USE crud_sample;
+
+-- Create Table
+CREATE TABLE items (
+  id UUID PRIMARY KEY,
+  name text,
+  quantity int
+);
