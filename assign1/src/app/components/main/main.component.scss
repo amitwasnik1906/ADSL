@@ -1,0 +1,29 @@
+.main-container {
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for the main container */
+}
+
+.header {
+    font-size: 28px; /* Larger font size for the header */
+    color: #333; /* Darker text color for the header */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.button-primary {
+    background-color: #007bff; /* Primary button background color */
+    color: white; /* White text for primary button */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for primary button */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline display */
+    font-size: 16px; /* Font size */
+    margin-top: 10px; /* Space above the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.button-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

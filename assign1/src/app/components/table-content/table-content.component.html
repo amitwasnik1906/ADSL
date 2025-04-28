@@ -1,0 +1,26 @@
+<div>
+    @for (item of tableContent(); track $index){
+    @if(tableName() == "students"){
+    <div class="table-row">
+        <div class="table-cell">ID: {{ item.ID }}</div>
+        <div class="table-cell">Name: {{ item.Name }}</div>
+        <div class="table-cell">Age: {{ item.Age }}</div>
+        <div class="table-cell">Department: {{ item.Department }}</div>
+        <div class="table-cell" >
+            <button class="button-primary" (click)="handleDelete('students', item.ID)">Delete</button>
+        </div>
+    </div>
+    }
+    @if(tableName() == "courses"){
+    <div class="table-row">
+        <div class="table-cell">Course ID: {{ item.CourseID }}</div>
+        <div class="table-cell">Course Name: {{ item.CourseName }}</div>
+        <div class="table-cell">Credits: {{ item.Credits }}</div>
+        <div class="table-cell">
+            <button class="button-primary" (click)="handleDelete('courses', item.ID)">Delete</button>
+        </div>
+    </div>
+    }
+
+    }
+</div>

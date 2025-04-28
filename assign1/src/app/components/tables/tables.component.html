@@ -1,0 +1,47 @@
+<div class="tableComponent">
+    <h1>Available Tables In Database</h1>
+
+    <div>
+        @for (item of tables(); track $index) {
+        <button class="tablebutton" (click)="clickHandler(item.Tables_in_sampledb)">{{item.Tables_in_sampledb}}</button>
+        }
+    </div>
+
+    <div class="form-container">
+        <h3 class="form-title">Add {{toggleTable()}}</h3>
+
+        <form class="data-form" (ngSubmit)="onSubmit()">
+            @if(toggleTable() == "students"){
+                <div class="form-group">
+                    <label class="form-label" for="name">Student Name:</label>
+                    <input class="form-input" type="text" id="name" [(ngModel)]="studentName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="age">Age:</label>
+                    <input class="form-input" type="number" id="age" [(ngModel)]="studentAge" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="department">Department:</label>
+                    <input class="form-input" type="text" id="department" [(ngModel)]="studentDepartment" name="department" required>
+                </div>
+                
+            }
+            @if(toggleTable() == "courses"){
+                <div class="form-group">
+                    <label class="form-label" for="courseName">Course Name:</label>
+                    <input class="form-input" type="text" id="courseName" [(ngModel)]="courseName" name="courseName" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="courseCredits">Credits :</label>
+                    <input class="form-input" type="number" id="courseCredits" [(ngModel)]="courseCredits" name="courseCredits" required>
+                </div>
+            }
+            <button class="submit-button" type="submit">Add {{toggleTable()}}</button>
+        </form>
+        <hr>
+        <div class= "tableContent">
+            <h2>Content in {{toggleTable()}} Table</h2>
+            <app-table-content [tableName]="toggleTable()"></app-table-content>
+        </div>
+    </div>
+</div>
