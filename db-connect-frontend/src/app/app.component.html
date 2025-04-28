@@ -1,0 +1,30 @@
+<div style="max-width: 600px; margin: auto; padding: 20px;">
+  <h2>Student Registration Form</h2>
+  
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    
+    <label>First Name:</label>
+    <input type="text" formControlName="firstName" required><br><br>
+
+    <label>Last Name:</label>
+    <input type="text" formControlName="lastName" required><br><br>
+
+    <label>Email:</label>
+    <input type="email" formControlName="email" required><br><br>
+
+    <label>Phone Number:</label>
+    <input type="number" formControlName="phoneNumber" required><br><br>
+
+    <label>Address:</label>
+    <textarea formControlName="address"></textarea><br><br>
+
+    <label>Course:</label>
+    <input type="text" formControlName="course" required><br><br>
+
+    <label>Roll Number:</label>
+    <input type="number" formControlName="rollNumber" required><br><br>
+
+    <button type="submit" [disabled]="!studentForm.valid">Submit</button>
+
+  </form>
+</div>
