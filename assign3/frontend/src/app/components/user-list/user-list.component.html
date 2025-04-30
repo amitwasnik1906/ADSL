@@ -1,0 +1,30 @@
+<div class="user-list">
+  <table class="user-table">
+    <thead>
+      <tr>
+        <!-- <th>#</th> -->
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of users(); track user.ID; let i = $index) {
+        <tr>
+          <!-- <td>{{i + 1}}</td> -->
+          <td>{{user.ID}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.role}}</td>
+          <td>
+            @if (user.ID !== 1) {
+              <button class="btn btn-danger" (click)="handleDelete(user.ID)">Delete</button>
+            }
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

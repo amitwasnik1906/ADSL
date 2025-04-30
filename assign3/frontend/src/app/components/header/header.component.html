@@ -1,0 +1,14 @@
+<header class="header">
+    <div class="logo">
+        <span class="logo-text">Course Management</span>
+    </div>
+    <div class="auth-buttons">
+        @if(!authService.isLoggedIn()){
+            <button routerLink="/login">Login</button>
+            <button routerLink="/register">Register</button>
+        }
+        @else {
+            <button (click)="authService.logout()">Logout</button>
+        }
+    </div>
+</header>

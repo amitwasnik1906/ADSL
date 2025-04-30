@@ -1,0 +1,35 @@
+<app-header></app-header>
+@if (userdata() == null){
+<div class="home-container">
+    <main class="main-container">
+        <div class="welcome-section">
+            <h1>Welcome to Our Learning Platform</h1>
+            <p>Join our community of learners and educators</p>
+
+            <div class="cta-buttons">
+                <a routerLink="/login" class="btn btn-primary">Login</a>
+                <a routerLink="/register" class="btn btn-secondary">Register Now</a>
+            </div>
+        </div>
+    </main>
+</div>
+}
+
+@else {
+@switch (this.role()) {
+    @case ('admin') {
+        <app-admin-dashboard></app-admin-dashboard>
+    }
+    @case ('instructor') {
+        <app-instructor-dashboard  [userData]="userdata()"></app-instructor-dashboard>
+    }
+    @case ('student') {
+        <app-student-dashboard [userData]="userdata()"></app-student-dashboard>
+    }
+    @default {
+    <div class="error-message">
+        <p>Invalid user role</p>
+    </div>
+    }
+    }
+}

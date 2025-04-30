@@ -10,6 +10,8 @@ const SELECTED_DB = 'mongo';
 app.use(cors());
 app.use(express.json());
 
+
+
 // Connect DB based on selected
 if (SELECTED_DB === 'mongo') {
   require('./config/mongo')();
